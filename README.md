@@ -1,37 +1,28 @@
 # Homework 3
 Submit a pdf for problems 1 – 4 and a Haskell *.hs file for problem 5.
 
-1. Using the grammar below, show a parse tree and a leftmost derivation for the sentence
+1. Using the grammar below, show a parse tree and a leftmost derivation for the sentence `B = (A+C)*B`
 ```
-B = (A+C)*B
   <assign>  ->  <id> = <expr>
-  <expr>    ->  <expr> * <term>
-             |  <term>
-  <term>    ->  <factor> + <term> | <factor> - <term>
-             |  <factor>
-  <factor>  ->  ( <expr> )
-             |  <id>
+  <expr>    ->  <expr> * <term> |  <term>
+  <term>    ->  <factor> + <term> | <factor> - <term> |  <factor>
+  <factor>  ->  ( <expr> ) |  <id>
   <id>      ->  A|B|C
 ```
 
 2. Rewrite the following BNF to add the **postfix** ++ and -- unary operators of Java.
 ```
   <assign>  ->  <id> = <expr>
-  <expr>    ->  <expr> * <term>
-             |  <term>
-  <term>    ->  <factor> + <term> | <factor> - <term>
-             |  <factor>
-  <factor>  ->  ( <expr> )
-             |  <id>
+  <expr>    ->  <expr> * <term> |  <term>
+  <term>    ->  <factor> + <term> | <factor> - <term> |  <factor>
+  <factor>  ->  ( <expr> ) |  <id>
   <id>      ->  A|B|C
 ```
 
 3. Show that the following grammar is ambiguous. Note: The terminals symbols are in bold.
 ```
 <compare>   ->  <boolexpr> == <boolexpr>
-<boolexpr>  ->  <boolexpr> && <boolexpr> | <boolexpr> OR <boolexpr>
-             |  <bool>
-             |  ! <bool>
+<boolexpr>  ->  <boolexpr> && <boolexpr> | <boolexpr> OR <boolexpr> |  <bool> |  ! <bool>
 <bool>      ->  <boolvalue> | <boolvar>
 <boolvalue> ->  True | False | 0 | 1
 <boolvar>   ->  x|y|z
@@ -41,10 +32,8 @@ B = (A+C)*B
 
 5. Below is the EBNF grammar for the animal sentence language
 ```
-<sentence>  ->  <noun> <verb> [<noun>]
-             |  <sentence> `and` <sentence>
-<noun>      ->  <adj> <noun> | <noun> `and` <noun>
-             |  `cats` | `dogs` | `bears` | `goats`
+<sentence>  ->  <noun> <verb> [<noun>] |  <sentence> `and` <sentence>
+<noun>      ->  <adj> <noun> | <noun> `and` <noun> |  `cats` | `dogs` | `bears` | `goats`
 <verb>      ->  `chase` | `cuddle` | `hug` | `scare`
 <adj>       ->  `sad` | `small` | `big` | `happy`
 ```
