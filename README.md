@@ -11,7 +11,7 @@ B = (A+C)*B
              |  <factor>
   <factor>  ->  ( <expr> )
              |  <id>
-  <id>      ->  A|B|C```
+  <id>      ->  A|B|C
 ```
 
 2. Rewrite the following BNF to add the **postfix** ++ and -- unary operators of Java.
