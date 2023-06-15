@@ -1,4 +1,4 @@
-# Homework 3
+# Homework 3 - Syntax
 Submit a pdf for problems 1 – 4 and a Haskell *.hs file for problem 5.
 
 1. Using the grammar below, show a parse tree and a leftmost derivation for the sentence `B = (A+C)*B`
